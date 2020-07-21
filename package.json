@@ -1,0 +1,65 @@
+{
+  "name": "Youtube-Converter",
+  "productName": "Youtube-Converter",
+  "version": "1.0.0",
+  "description": "A desktop app that allow download, extract audio and search videos from Youtube",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "watch-sass": "node-sass -w src/sass/index.scss src/index.css"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Dustin Vo",
+    "email": "datvo.vtd@gmail.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "youtube_convert_app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin",
+            "window"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-settings": "^4.0.2",
+    "electron-squirrel-startup": "^1.0.0",
+    "jquery": "^3.5.1",
+    "youtube-dl": "^3.0.2",
+    "yt-dl-playlist": "^2.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.52",
+    "@electron-forge/maker-deb": "6.0.0-beta.52",
+    "@electron-forge/maker-rpm": "6.0.0-beta.52",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.52",
+    "@electron-forge/maker-zip": "6.0.0-beta.52",
+    "electron": "9.1.0",
+    "node-sass": "4.5.0"
+  }
+}

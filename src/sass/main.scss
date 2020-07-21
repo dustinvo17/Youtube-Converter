@@ -1,0 +1,244 @@
+
+.play-button {
+    background-color: $play-btn;
+}
+.download-button {
+    background-color: $download-btn;
+}
+body {
+   overflow-y: auto;
+}
+body, * {
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+   
+   & button   {
+       color:white;
+       border: none;
+       background-color: $btn-bg;
+      
+       padding: 8px 12px;
+       border-radius: 2px;
+       font-weight: 900;
+   }
+   & button,input {
+       &:focus {
+           outline: none!important;
+       }
+   }
+   
+}
+
+nav.container {
+   padding:30px 10px;
+   display: flex;
+   align-items: flex-start;
+   align-self: stretch;
+   & select {
+       padding:4px;
+       border:1px solid $input-border ;
+   }
+   & .paste-button {
+       background-color:$download-btn;
+       cursor: pointer;
+   }
+   .search-input-wrapper {
+       flex-grow: 1;
+       margin:0 10px;
+       display: flex;
+       align-items: stretch;
+       & button {
+           border-radius: 0;
+           cursor: pointer;
+       }
+       & div:nth-child(1){
+           flex-grow: 1;
+      
+           display: flex;
+           align-items: stretch;
+           position: relative;
+           & .search-result-list {
+               position: absolute;
+               top:120%;
+               left:0;
+               box-shadow:5px 5px 25px $input-border ;
+               width:100%;
+               padding-top:20px;
+               background:white;
+               z-index: 99;
+               & i {
+                   color:$input-border;
+           
+               }
+               & .fa-window-close {
+                   position: absolute;
+                   top:3px;
+                   right:5px;
+                   z-index: 99;
+                   cursor: pointer;
+                   color:$play-btn;
+               }
+            
+               & li {
+                   list-style: none;
+               
+                       padding:10px;
+                   
+               }
+           }
+       }
+       & input {
+           
+           width: 100%;
+           border: none;
+           padding:0 10px;
+           border:1px solid $input-border ;
+       }
+    
+   }
+   .search-result-item {
+       display:flex;
+ 
+       align-items: center;
+       & img {
+           width:50px; 
+           height:50px;
+           object-fit:cover;
+           margin-right:10px;
+           cursor: pointer;
+       }
+       &-title {
+           cursor: pointer;
+           padding:0 10px;
+           &:hover {
+               color:$btn-bg;
+           }
+       }
+       & .download-button {
+        
+           position: relative;
+           z-index:90;
+       }
+      
+     
+    
+       
+   }
+   & select {
+       margin-right:5px;
+       align-self: center;
+     
+   }
+}
+.while-loading {
+   text-align:center;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   width:100%;
+   height:100px;
+   & .search-loading-icon {
+       font-size:24px;
+  
+   }
+}
+.search-loading-icon { 
+   animation: rotating   2s linear infinite;;
+}
+
+ @keyframes rotating {
+   from {
+     -ms-transform: rotate(0deg);
+     -moz-transform: rotate(0deg);
+     -webkit-transform: rotate(0deg);
+     -o-transform: rotate(0deg);
+     transform: rotate(0deg);
+   }
+   to {
+     -ms-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     transform: rotate(360deg);
+   }
+ }
+
+ .downloaded-list {
+
+    
+       & .downloaded-item {
+           display:flex;
+           position: relative;
+           padding:15px 20px;
+           border-top:1px solid $input-border;
+           &:last-child {
+               border-bottom: 1px solid $input-border;
+           }
+           &-info {
+               display:flex;
+               flex-direction: column;
+               margin-right: auto;
+               justify-content: space-between;
+               padding:0 20px 0 0;
+           }
+           &-title {
+               margin-bottom: 10px;
+               
+           }
+           &-buttons {
+               display:flex;
+               align-items: center;
+               & button {
+                   cursor: pointer;
+               }
+           }
+           & img{
+               width:70px; 
+               height:50px;
+               object-fit:cover;
+               margin-right:10px;
+               cursor: pointer;
+             }
+           & .fa-window-close {
+               position: absolute;
+               top:3px;
+               right:3px;
+               color:$play-btn;
+               cursor: pointer;
+               z-index: 99;
+           }
+       }   
+  
+ }
+ .report {
+     display:flex;
+     padding:0 40px;
+     justify-content: center;
+     & h4 {
+         &:first-child {
+             margin-right:40px;
+         }
+     }
+ }
+ .processing {
+     position: absolute;
+     top:0;
+     left:0;
+     height:100%;
+     width:100%;
+     background:rgba(0,0,0,0.6);
+     display:flex;
+     flex-direction: column;
+     text-align: center;
+     z-index: 9999;
+     align-items: center;
+     justify-content: center;
+     text-transform: uppercase;
+     font-weight: 900;
+     color:white;
+     & i {
+         margin-bottom:5px;
+         color:white!important
+     }
+ }

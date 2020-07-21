@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube-Converter</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <div class="settings-container">
+        <input type="text" name="download_path" id="download_path" value="" readonly="readonly">
+    
+        <button class="download-change" type="button">Change</button>
+
+    </div>
+</body>
+<script>
+    const $ = require( "jquery" );
+     const electron = require('electron');
+     const {ipcRenderer} = electron;
+     $(document).ready(function() {
+         ipcRenderer.send('download_path','')
+     })
+     // get settings download directory path 
+    ipcRenderer.on('download_path-reply',(e,download_path) => {
+
+        $('#download_path').val(download_path) 
+      }
+    )
+    // emit event if user want to change directory
+    $('.download-change').click(function(){
+        ipcRenderer.send('download-change','')
+    })
+    // get new path
+    
+    ipcRenderer.on('download-change-repl',(e,download_path) => {
+        $('#download_path').val(download_path) 
+      })
+  
+</script>
+</html>
