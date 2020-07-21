@@ -1,9 +1,9 @@
-const { app, BrowserWindow, Menu, ipcMain, dialog, Notification, nativeImage, shell } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, dialog, Notification,  shell } = require('electron');
 const path = require('path');
 const settings = require('electron-settings');
 const isMac = process.platform === 'darwin'
 
-let settingsWindow;
+let settingsWindow = null;
 let mainWindow;
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -31,8 +31,11 @@ const createWindow = async () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
   mainWindow.on('close',function(e){
     mainWindow = null;
-    settingsWindow.close()
-    settingsWindow = null;
+    if(settingsWindow != null) {
+      settingsWindow.close()
+      settingsWindow = null;
+
+    }
     
   })
   // Open the DevTools.
@@ -88,10 +91,7 @@ const createSettingsWindow = () => {
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   app.setName('Youtube-Converter')
-  const logo = nativeImage.createFromPath(app.getAppPath() + "/src/logo.png");
-  if (isMac) {
-    app.dock.setIcon(logo);
-  }
+  
   createWindow()
 
 });
