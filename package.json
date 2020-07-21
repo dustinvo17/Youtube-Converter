@@ -2,7 +2,7 @@
   "name": "Youtube-Converter",
   "productName": "Youtube-Converter",
   "version": "1.0.0",
-  "description": "A desktop app that allow download, extract audio and search videos from Youtube",
+  "description": "A desktop app that allows download, extract audio and search videos from Youtube",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
