@@ -171,11 +171,8 @@ function searchCallBack(info) {
 
 function download_callback(item, mp4 = false) {
 
-<<<<<<< HEAD
  
-=======
   
->>>>>>> a769a74411879d6ff7358d54d9870f709ba4e50b
 
     let filename = mp4 ? item._filename : item.fileName
 
