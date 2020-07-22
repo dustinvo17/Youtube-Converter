@@ -6,6 +6,7 @@ let dl_path;
 let finish_callback;
 
 let callback;
+
 const Downloader = function(download_path,start,finish) {
   
     
@@ -28,10 +29,15 @@ const Downloader = function(download_path,start,finish) {
         throw fileInfo.error
 
       })
+      this.mp3downloader.on('start', function(fileInfo) {
+        callback(fileInfo)
+     
+      })
+      this.mp3downloader.on('complete',function(fileInfo){ finish_callback(fileInfo)})
    
  
 };
- 
+
 Downloader.prototype.getmp3 = function(url){
     let self = this
     youtubedl.getInfo(url,function(err,info){
@@ -41,10 +47,6 @@ Downloader.prototype.getmp3 = function(url){
             throw err
 
         }
-        
-        self.mp3downloader.on('start', function(fileInfo) {callback(fileInfo)})
-        self.mp3downloader.on('complete',function(fileInfo){ finish_callback(fileInfo)})
-
         self.mp3downloader.download(info.id)
         
     })
@@ -131,8 +133,6 @@ Downloader.prototype.playlistmp3 = function(url) {
     youtubedl.getInfo(url,function(err,info){
         if(err) return alert(`There is an error while processing, please try again!`)
         
-        self.mp3downloader.on('start', function(fileInfo) {callback(fileInfo)})
-        self.mp3downloader.on('complete',function(fileInfo){ finish_callback(fileInfo)})
         for(let item of info){
             self.mp3downloader.download(item.id)
 

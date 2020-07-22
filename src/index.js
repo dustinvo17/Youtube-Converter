@@ -39,9 +39,9 @@ const createWindow = async () => {
     
   })
   // Open the DevTools.
-  if (process.env.NODE_ENV !== 'production') {
-    mainWindow.webContents.openDevTools();
-  }
+  // if (process.env.NODE_ENV !== 'production') {
+  //   mainWindow.webContents.openDevTools();
+  // }
 
   // build menu
   const mainMenu = Menu.buildFromTemplate(menuTemplate)

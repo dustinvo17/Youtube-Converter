@@ -21,7 +21,7 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "icon":"public/logo.ico"
+        "icon":"public/logo.icns"
       },
       "makers": [
         {
@@ -34,7 +34,7 @@
           "name": "@electron-forge/maker-zip",
           "platforms": [
             "darwin",
-            "window"
+            "win32"
           ]
         },
         {

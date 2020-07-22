@@ -206,7 +206,7 @@ nav.container {
                right:3px;
                color:$play-btn;
                cursor: pointer;
-               z-index: 99;
+               z-index: 96;
            }
        }   
   
@@ -231,7 +231,7 @@ nav.container {
      display:flex;
      flex-direction: column;
      text-align: center;
-     z-index: 9999;
+     z-index: 97;
      align-items: center;
      justify-content: center;
      text-transform: uppercase;
