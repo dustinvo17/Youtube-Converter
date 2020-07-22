@@ -21,6 +21,7 @@ const createWindow = async () => {
     webPreferences: {
       nodeIntegration: true
     },
+    
 
   });
 
@@ -38,10 +39,10 @@ const createWindow = async () => {
     }
     
   })
-  // Open the DevTools.
-  // if (process.env.NODE_ENV !== 'production') {
-  //   mainWindow.webContents.openDevTools();
-  // }
+
+ 
+ 
+  
 
   // build menu
   const mainMenu = Menu.buildFromTemplate(menuTemplate)
@@ -70,7 +71,7 @@ const createSettingsWindow = () => {
 
   settingsWindow = new BrowserWindow({
     width: 500,
-    height: 100,
+    height: 150,
 
     webPreferences: {
       nodeIntegration: true

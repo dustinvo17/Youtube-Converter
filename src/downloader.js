@@ -16,7 +16,7 @@ const Downloader = function(download_path,start,finish) {
     dl_path = download_path
     this.mp3downloader = new DownloadYTFile({ 
         outputPath: download_path,
-        ffmpegPath: path.join(__dirname, '../ffmpeg'),
+        ffmpegPath: path.join(__dirname, '../ffmpeg.exe'),
         maxParallelDownload: 50,
         fileNameGenerator: function(videoTitle) {
           return  videoTitle.replace(/[&\/\|\#,+()$~%.'":*?<>{}]/g,' ') + '.mp3'
@@ -24,6 +24,7 @@ const Downloader = function(download_path,start,finish) {
     })
       
       this.mp3downloader.on('error', function(fileInfo) {
+        console.log(fileInfo)
         console.log(fileInfo.error)
         alert(`There is an error while processing, please try again!`)
         throw fileInfo.error
@@ -109,7 +110,10 @@ Downloader.prototype.playlistmp4 = function(url) {
       video.pipe(fs.createWriteStream(`${dl_path}/${info._filename}`))
     })
  
+<<<<<<< HEAD
    
+=======
+>>>>>>> a769a74411879d6ff7358d54d9870f709ba4e50b
     video.on('end',function(e) {
         finish_callback(info_item,mp4=true)
     })
