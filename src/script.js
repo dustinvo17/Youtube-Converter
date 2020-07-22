@@ -167,11 +167,10 @@ function searchCallBack(info) {
 }
 
 // WHEN DOWNLOAD FIRST START
-let count = 0;
+
 function download_callback(item, mp4 = false) {
 
-    count++
-    console.log(count)
+ 
 
     let filename = mp4 ? item._filename : item.fileName
 

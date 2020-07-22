@@ -56,9 +56,7 @@ const createWindow = async () => {
       path_to: path_to_dl
     })
   }
-  else {
-    console.log(download_dir)
-  }
+  
 
 
   // Running for the first time.

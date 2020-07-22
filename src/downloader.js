@@ -19,7 +19,7 @@ const Downloader = function(download_path,start,finish) {
         ffmpegPath: path.join(__dirname, '../ffmpeg'),
         maxParallelDownload: 50,
         fileNameGenerator: function(videoTitle) {
-          return  videoTitle.replace('/', '|') + '.mp3'
+          return  videoTitle.replace(/[&\/\|\#,+()$~%.'":*?<>{}]/g,' ') + '.mp3'
         }
     })
       
@@ -109,18 +109,7 @@ Downloader.prototype.playlistmp4 = function(url) {
       video.pipe(fs.createWriteStream(`${dl_path}/${info._filename}`))
     })
  
-    let pos = 0
-    video.on('data', function data(chunk) {
-      pos += chunk.length
-      // `size` should not be 0 here.
-      if (size) {
-        let percent = (pos / size * 100).toFixed(2)
-        process.stdout.cursorTo(0)
-        process.stdout.clearLine(1)
-        process.stdout.write(percent + '%')
-        console.log(percent)
-      }
-    })
+   
     video.on('end',function(e) {
         finish_callback(info_item,mp4=true)
     })
