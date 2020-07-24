@@ -8,16 +8,15 @@ Core Features:
 This app is 100% free to use. However, users who use this app MUST respect Youtube Copyright Policy. 
 
 Youtube Copyright Policy:
-https://www.youtube.com/howyoutubewor...
+https://www.youtube.com/howyoutubeworks/policies/copyright/
 
 Link App download for macOS users:
-https://drive.google.com/file/d/1dgow...
+https://drive.google.com/file/d/1iQU_-yaPyJJeJttMTdc4Uu6jImMX3GOp/view?usp=sharing
 
 Link App download from Window users:
-https://drive.google.com/file/d/1iQU_...
+https://drive.google.com/file/d/1iQU_-yaPyJJeJttMTdc4Uu6jImMX3GOp/view?usp=sharing
 
-Source code: 
-https://github.com/dustinvo17/Youtube...
+
 
 The tech stack used in the app: ElectronJS, JQuery.
 
