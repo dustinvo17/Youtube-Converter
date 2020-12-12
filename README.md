@@ -16,9 +16,11 @@ https://drive.google.com/file/d/1iQU_-yaPyJJeJttMTdc4Uu6jImMX3GOp/view?usp=shari
 Link App download from Window users:
 https://drive.google.com/file/d/1iQU_-yaPyJJeJttMTdc4Uu6jImMX3GOp/view?usp=sharing
 
-To Start Local Run On Browser: 
-- Clone repo 
-- Npm run start
+To start on local: 
+- Create new folder
+- git clone https://github.com/dustinvo17/Youtube-Converter.git
+- npm install
+- ppm run start
 
 
 The tech stack used in the app: ElectronJS, JQuery.
