@@ -20,7 +20,7 @@ To start on local:
 - Create new folder
 - git clone https://github.com/dustinvo17/Youtube-Converter.git
 - npm install
-- ppm run start
+- npm run start
 
 
 The tech stack used in the app: ElectronJS, JQuery.
